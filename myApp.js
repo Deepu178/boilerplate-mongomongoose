@@ -1,6 +1,7 @@
-require('dotenv').config();
+const mongoose = require('mongoose');
+require('dotenv').config({path:'./.env'});
 
-
+mongoose.connect(`mongodb+srv://freecodecamp:freecodecamp@cluster0.i3px0s3.mongodb.net/?retryWrites=true&w=majority`, {useNewUrlParser:true, useUnifiedTopology:true}).then(()=>console.log('MongoDB connectd')).catch(error=>console.log(error));
 let Person;
 
 const createAndSavePerson = (done) => {
