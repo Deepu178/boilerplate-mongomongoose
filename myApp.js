@@ -1,7 +1,11 @@
+
 const mongoose = require('mongoose');
 require('dotenv').config({path:'./.env'});
 
-mongoose.connect(`mongodb+srv://freecodecamp:freecodecamp@cluster0.i3px0s3.mongodb.net/?retryWrites=true&w=majority`, {useNewUrlParser:true, useUnifiedTopology:true}).then(()=>console.log('MongoDB connectd')).catch(error=>console.log(error));
+const user = "freecodecamp";
+const password = "freecodecamp";
+
+mongoose.connect(`mongodb+srv://${user}:${password}@cluster0.i3px0s3.mongodb.net/?retryWrites=true&w=majority`, {useNewUrlParser:true, useUnifiedTopology:true}).then(()=>console.log('MongoDB connectd')).catch(error=>console.log(error));
 let Person;
 
 const createAndSavePerson = (done) => {
